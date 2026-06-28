@@ -1,0 +1,27 @@
+# System
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local user data
+data/raw/
+data/private/
+data/audio/
+data/transcripts/
+data/exports/
+
+# Logs
+*.log
+
+# Temporary files
+.tmp/
+.cache/
