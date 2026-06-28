@@ -1,208 +1,139 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
-      .label { font-family: 'JetBrains Mono', monospace; }
-      .title { font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+      .label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .title { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: bold; }
+      .subtitle { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="900" height="650" fill="#11181C"/>
+  <rect width="1200" height="760" fill="#11181C"/>
 
   <!-- Title Section -->
-  <text x="450" y="40" text-anchor="middle" fill="#D8DEE3" class="title" font-size="24">Anatomy of an AI-Ready SpeakOps Project</text>
-  <text x="450" y="70" text-anchor="middle" fill="#8A969E" class="label" font-size="14">Local-first Business English Voice Activation OS</text>
+  <text x="600" y="50" text-anchor="middle" fill="#D8DEE3" class="title" font-size="28">Anatomy of an AI-Ready SpeakOps Project</text>
+  <text x="600" y="85" text-anchor="middle" fill="#8A969E" class="subtitle" font-size="16">Local-first Business English Voice Activation OS</text>
 
-  <!-- Main Panel -->
-  <rect x="50" y="100" width="800" height="500" rx="8" fill="#172126"/>
+  <!-- Main Container -->
+  <rect x="50" y="120" width="1100" height="600" rx="12" fill="#172126" stroke="#6F95A5" stroke-width="2"/>
 
-  <!-- Terminal Header -->
-  <rect x="50" y="100" width="800" height="30" rx="8" fill="#1F2937"/>
-  <circle cx="70" cy="115" r="5" fill="#B97868"/>
-  <circle cx="85" cy="115" r="5" fill="#8FAE9A"/>
-  <circle cx="100" cy="115" r="5" fill="#6F95A5"/>
-  <text x="120" y="120" fill="#8A969E" class="label" font-size="12">speakops/</text>
+  <!-- Grid Layout - 3 columns, 3 rows -->
 
-  <!-- Directory Structure -->
-  <g transform="translate(70, 150)">
+  <!-- Row 1 -->
 
-    <!-- .claude/ -->
-    <g>
-      <rect x="0" y="0" width="250" height="70" rx="4" fill="#1F2937" stroke="#6F95A5" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#B7A27A" class="label" font-size="11">.claude/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Claude Code integration</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">commands/</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">skills/</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">slash-command workflows</text>
-      </g>
-    </g>
-
-    <!-- .agent/ -->
-    <g transform="translate(280, 0)">
-      <rect x="0" y="0" width="180" height="70" rx="4" fill="#1F2937" stroke="#B78BEA" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#B78BEA" class="label" font-size="11">.agent/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Agentic development OS</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">memory/</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">protocols/</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">adapters/</text>
-      </g>
-    </g>
-
-    <!-- skills/ -->
-    <g transform="translate(480, 0)">
-      <rect x="0" y="0" width="160" height="70" rx="4" fill="#1F2937" stroke="#8FAE9A" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#8FAE9A" class="label" font-size="11">skills/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">10 Claude Code skills</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">phrase-extractor/</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">voice-drill-builder/</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">...8 more</text>
-      </g>
-    </g>
-
-    <!-- agents/ -->
-    <g transform="translate(660, 0)">
-      <rect x="0" y="0" width="120" height="70" rx="4" fill="#1F2937" stroke="#B7A27A" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#B7A27A" class="label" font-size="11">agents/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">11 agent specs</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">spec-planner.md</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">lazy-senior-dev.md</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">...9 more</text>
-      </g>
-    </g>
-
-    <!-- evals/ -->
-    <g transform="translate(70, 90)">
-      <rect x="0" y="0" width="120" height="70" rx="4" fill="#1F2937" stroke="#B97868" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#B97868" class="label" font-size="11">evals/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Quality &amp; regression</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">rubrics/</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">datasets/</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">reports/</text>
-      </g>
-    </g>
-
-    <!-- docs/ -->
-    <g transform="translate(210, 90)">
-      <rect x="0" y="0" width="120" height="70" rx="4" fill="#1F2937" stroke="#8FAE9A" stroke-width="1."/>
-      <text x="10" y="15" fill="#8FAE9A" class="label" font-size="11">docs/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Workflows &amp; conventions</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">workflows/</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">conventions/</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">adr/</text>
-      </g>
-    </g>
-
-    <!-- examples/ -->
-    <g transform="translate(350, 90)">
-      <rect x="0" y="0" width="100" height="70" rx="4" fill="#1F2937" stroke="#6F95A5" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#6F95A5" class="label" font-size="11">examples/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Safe demos</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">source-sample.md</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">voice-drill-sample.md</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">...2 more</text>
-      </g>
-    </g>
-
-    <!-- scripts/ -->
-    <g transform="translate(470, 90)">
-      <rect x="0" y="0" width="80" height="70" rx="4" fill="#1F2937" stroke="#8FAE9A" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#8FAE9A" class="label" font-size="11">scripts/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Python automation</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">ingest_obsidian.py</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">score_session.py</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">...2 more</text>
-      </g>
-    </g>
-
-    <!-- voice-hooks/ -->
-    <g transform="translate(570, 90)">
-      <rect x="0" y="0" width="80" height="70" rx="4" fill="#1F2937" stroke="#B7A27A" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#B7A27A" class="label" font-size="11">voice-hooks/</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Alert system</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">README.md</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">voice-alert-spec.md</text>
-      </g>
-    </g>
-
-    <!-- Core Docs -->
-    <g transform="translate(670, 90)">
-      <rect x="0" y="0" width="140" height="70" rx="4" fill="#1F2937" stroke="#D8DEE3" stroke-width="1.5"/>
-      <text x="10" y="15" fill="#D8DEE3" class="label" font-size="11">Core Docs</text>
-      <text x="10" y="30" fill="#8A969E" class="label" font-size="10">Development guides</text>
-
-      <g transform="translate(15, 40)">
-        <text x="0" y="8" fill="#6F95A5" class="label" font-size="9">CLAUDE.md</text>
-        <text x="0" y="22" fill="#8A969E" class="label" font-size="9">AGENTS.md</text>
-        <text x="0" y="36" fill="#8A969E" class="label" font-size="9">...3 more</text>
-      </g>
-    </g>
-
-    <!-- Legend -->
-    <g transform="translate(70, 180)">
-      <text x="0" y="0" fill="#8A969E" class="label" font-size="12">Component Legend:</text>
-
-      <g transform="translate(0, 15)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#B78BEA"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">AI-ready integration</text>
-      </g>
-
-      <g transform="translate(0, 35)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#B7A27A"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">Agent layer</text>
-      </g>
-
-      <g transform="translate(0, 55)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#8FAE9A"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">Skills &amp; capabilities</text>
-      </g>
-
-      <g transform="translate(0, 75)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#B97868"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">Quality &amp; evaluation</text>
-      </g>
-
-      <g transform="translate(0, 95)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#6F95A5"/>
-        <text x="22" y="12" fill="#8A96E" class="label" font-size="11">Utilities &amp; automation</text>
-      </g>
-
-      <g transform="translate(0, 115)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#D8DEE3"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">Documentation &amp; governance</text>
-      </g>
-
-      <g transform="translate(0, 135)">
-        <rect x="0" y="0" width="15" height="15" rx="2" fill="#8FAE9A"/>
-        <text x="22" y="12" fill="#8A969E" class="label" font-size="11">Alert system</text>
-      </g>
-    </g>
-
-    <!-- Bottom Labels -->
-    <text x="70" y="260" fill="#6F95A5" class="label" font-size="11">📍 Local-only: /data/ (gitignored) - Phrase bank, sessions, scores</text>
-    <text x="70" y="280" fill="#8A969E" class="label" font-size="10">🔒 Privacy-first: No API keys, no external calls, no telemetry</text>
-    <text x="70" y="300" fill="#8A969E" class="label" font-size="10">🎯 Eval-driven: 6 rubrics with quality gates, regression testing</text>
+  <!-- .claude/ -->
+  <g transform="translate(100, 160)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#6F95A5" stroke-width="2"/>
+    <text x="20" y="35" fill="#6F95A5" class="title" font-size="18">.claude/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Claude Code integration</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">commands/ skills/</text>
   </g>
 
-  <!-- Footer -->
-  <text x="450" y="620" text-anchor="middle" fill="#8A969E" class="label" font-size="12">SpeakOps Repository Anatomy — v0.1.0</text>
-  <text x="450" y="640" text-anchor="middle" fill="#6F95A5" class="label" font-size="11">github.com/vstakhovsky/speakops</text>
+  <!-- .agent/ -->
+  <g transform="translate(440, 160)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B78BEA" stroke-width="2"/>
+    <text x="20" y="35" fill="#B78BEA" class="title" font-size="18">.agent/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Agentic Development OS</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">memory/ protocols/ adapters/</text>
+  </g>
+
+  <!-- skills/ -->
+  <g transform="translate(780, 160)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
+    <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">skills/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">10 Claude Code Skills</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">phrase-extractor voice-drill-builder</text>
+  </g>
+
+  <!-- Row 2 -->
+
+  <!-- agents/ -->
+  <g transform="translate(100, 290)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B7A27A" stroke-width="2"/>
+    <text x="20" y="35" fill="#B7A27A" class="title" font-size="18">agents/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">11 Specialist Agents</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">spec-planner lazy-senior-dev eval-engineer</text>
+  </g>
+
+  <!-- evals/ -->
+  <g transform="translate(440, 290)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B97868" stroke-width="2"/>
+    <text x="20" y="35" fill="#B97868" class="title" font-size="18">evals/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Quality &amp; Regression</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">rubrics/ datasets/ reports/</text>
+  </g>
+
+  <!-- docs/ -->
+  <g transform="translate(780, 290)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
+    <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">docs/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Workflows &amp; Conventions</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">workflows/ conventions/ adr/</text>
+  </g>
+
+  <!-- Row 3 -->
+
+  <!-- examples/ -->
+  <g transform="translate(100, 420)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#6F95A5" stroke-width="2"/>
+    <text x="20" y="35" fill="#6F95A5" class="title" font-size="18">examples/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Safe Demo Examples</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">source-sample voice-drill-sample</text>
+  </g>
+
+  <!-- scripts/ -->
+  <g transform="translate(440, 420)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
+    <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">scripts/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Local Automation</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">ingest_obsidian score_session</text>
+  </g>
+
+  <!-- voice-hooks/ -->
+  <g transform="translate(780, 420)">
+    <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B7A27A" stroke-width="2"/>
+    <text x="20" y="35" fill="#B7A27A" class="title" font-size="18">voice-hooks/</text>
+    <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Voice Alert System</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">triggers for daily practice</text>
+  </g>
+
+  <!-- Core Docs Row -->
+  <g transform="translate(100, 550)">
+    <rect width="960" height="80" rx="8" fill="#1F2937" stroke="#D8DEE3" stroke-width="2"/>
+    <text x="20" y="30" fill="#D8DEE3" class="title" font-size="18">Core Documentation</text>
+    <text x="20" y="55" fill="#8A969E" class="label" font-size="14">CLAUDE.md • AGENTS.md • CODEX.md • SECURITY.md • PROJECT_STRUCTURE.md</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 660)">
+    <text x="0" y="0" fill="#8A969E" class="title" font-size="14">Color Legend:</text>
+
+    <g transform="translate(0, 15)">
+      <rect width="20" height="20" rx="4" fill="#6F95A5"/>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Integration</text>
+    </g>
+
+    <g transform="translate(150, 15)">
+      <rect width="20" height="20" rx="4" fill="#B78BEA"/>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Development OS</text>
+    </g>
+
+    <g transform="translate(320, 15)">
+      <rect width="20" height="20" rx="4" fill="#8FAE9A"/>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Skills &amp; Docs</text>
+    </g>
+
+    <g transform="translate(480, 15)">
+      <rect width="20" height="20" rx="4" fill="#B7A27A"/>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Agents &amp; Hooks</text>
+    </g>
+
+    <g transform="translate(640, 15)">
+      <rect width="20" height="20" rx="4" fill="#B97868"/>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Quality &amp; Evals</text>
+    </g>
+  </g>
+
+  <!-- Footer Info -->
+  <text x="600" y="745" text-anchor="middle" fill="#6F95A5" class="label" font-size="13">github.com/vstakhovsky/speak-ops • Local-first • Privacy-first • Eval-driven</text>
 </svg>
