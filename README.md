@@ -2,9 +2,20 @@
 
 <div align="center">
 
-### 🎤 Local-first Business English Voice Activation OS
+<p>
+  <strong>🎤 Local-first Business English Voice Activation OS</strong>
+</p>
+<p>
+  Transform passive vocabulary into active spoken communication for IT, Product, and AI professionals
+</p>
 
-**Transform passive vocabulary into active spoken communication for IT, Product, and AI professionals**
+<p align="center">
+  <img src="./assets/speakops-architecture.svg" alt="SpeakOps AI-ready repository architecture" width="900">
+</p>
+
+<p>
+  <em>Anatomy of an AI-Ready Repository • Claude Code Skills • Agents • Evals • Privacy-First</em>
+</p>
 
 [Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Development](#-development) • [Resources](#-resources)
 
@@ -12,7 +23,41 @@
 
 ---
 
-## Why SpeakOps Exists
+## Badges
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-success" alt="Status: Active" />
+  <img src="https://img.shields.io/badge/AI--ready-blue" alt="AI-ready" />
+  <img src="https://img.shields.io/badge/local--first-success" alt="Local-first" />
+  <img src="https://img.shields.io/badge/privacy--first-success" alt="Privacy-first" />
+  <img src="https://img.shields.io/badge/eval--driven-success" alt="Eval-driven" />
+  <img src="https://img.shields.io/badge/Claude--Code-ready-blue" alt="Claude Code-ready" />
+  <img src="https://img.shields.io/badge/python-3.13+-blue.svg" alt="Python 3.13+" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT" />
+</p>
+
+---
+
+## Core Activation Loop
+
+<p align="center">
+  <img src="./assets/speakops-core-loop.svg" alt="SpeakOps core activation loop" width="800">
+</p>
+
+**Core principle:** Activation over memorization
+
+The loop emphasizes practice and feedback over rote memorization:
+
+1. **Source Material** → Phrase Extraction
+2. **Voice Drill** → Spoken Answer (ChatGPT Voice)
+3. **Scoring** → Feedback
+4. **Repetition** → Weak phrases replayed in new contexts
+
+**Result:** Phrases become active and ready for real meetings and interviews.
+
+---
+
+### Why SpeakOps Exists
 
 IT, Product, and AI professionals often have **passive** English vocabulary from reading technical blogs, documentation, and conference talks—but struggle to use it actively in spoken contexts like:
 
@@ -82,6 +127,57 @@ IT, Product, and AI professionals often have **passive** English vocabulary from
 │  └──────────────┘    └──────────────┘    └──────────────┘  │
 │                                                           │
 └─────────────────────────────────────────────────────────────┘
+```
+
+### System Flow (Mermaid)
+
+```mermaid
+flowchart TD
+    %% Nodes
+    Source[Source Material]
+    Source --> Obsidian[Obsidian]
+    Source --> GDocs[Google Docs]
+    Source --> YouTube[YouTube]
+    Source --> Notes[Meeting Notes]
+
+    Obsidian --> Extraction[Phrase Extraction]
+    GDocs --> Extraction
+    YouTube --> Extraction
+    Notes --> Extraction
+
+    Extraction --> Naturalness[Spoken Naturalness Gate]
+    Naturalness --> Drills[Voice Drill Builder]
+    Drills --> ChatGPT[ChatGPT Voice Practice]
+
+    ChatGPT --> Session[Spoken Session]
+    Session --> Scoring[Activation Scoring]
+
+    Scoring --> Feedback[Feedback Loop]
+    Feedback --> PhraseCards[Phrase Cards]
+    PhraseCards --> WeakPhrases[Weak Phrase Replay]
+
+    WeakPhrases --> Drills
+    Scoring --> Weekly[Weekly Evals]
+
+    Weekly --> Quality[Quality Gates]
+    Quality --> Improvement[Agentic Repo Improvement]
+
+    Improvement --> Docs[Documentation Update]
+    Improvement --> Evals[Evals Update]
+    Improvement --> Decision[Decision Log]
+
+    %% Styling
+    classDef source fill:#172126,stroke:#6F95A5,stroke-width:2px,color:#D8DEE3
+    classDef extraction fill:#172126,stroke:#B7A27A,stroke-width:2px,color:#D8DEE3
+    classDef voice fill:#172126,stroke:#8FAE9A,stroke-width:2px,color:#D8DEE3
+    classDef quality fill:#172126,stroke:#B97868,stroke-width:2px,color:#D8DEE3
+    classDef loop fill:#172126,stroke:#B78BEA,stroke-width:2px,color:#D8DEE3
+
+    class Source,Obsidian,GDocs,YouTube,Notes source
+    class Extraction,Naturalness,Drills extraction
+    class ChatGPT,Session,Scoring,Feedback,PhraseCards voice
+    class Weekly,Quality,Improvement quality
+    class WeakPhrases,Docs,Evals,Decision loop
 ```
 
 ### Component Layers

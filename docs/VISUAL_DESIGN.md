@@ -1,0 +1,391 @@
+# SpeakOps Visual Design System
+
+> 🎨 GitHub-compatible visual language for SpeakOps documentation
+
+---
+
+## 🎯 Design Philosophy
+
+**Goal:** Create visually polished GitHub documentation that works across light and dark themes while maintaining professional aesthetics.
+
+**Constraints:**
+- ✅ GitHub Markdown compatibility
+- ✅ Light/dark theme readability
+- ✅ No external CSS dependencies
+- ✅ No editor-only syntax highlighting
+- ✅ SVG for colorful diagrams
+- ✅ Badges, tables, Mermaid for structure
+
+---
+
+## 🎨 Color Palette
+
+### Dark Theme Colors (SVG, Mermaid)
+
+| Color | Hex | Usage | Example |
+|-------|-----|-------|---------|
+| **Background** | `#11181C` | Dark backgrounds | SVG backgrounds, code blocks |
+| **Panel** | `#172126` | Secondary backgrounds | Card backgrounds, containers |
+| **Text Primary** | `#D8DEE3` | Main text | Headlines, primary content |
+| **Text Muted** | `#8A969E` | Secondary text | Metadata, descriptions |
+| **Blue Gray** | `#6F95A5` | Utilities, automation | Scripts, tools, connectors |
+| **Gold** | `#B7A27A` | Agent layer, extraction | Agents, extraction processes |
+| **Clay** | `#B97868` | Quality, evaluation | Evals, scoring, quality gates |
+| **Green** | `#8FAE9A` | Skills, capabilities | Skills, voice drills, outputs |
+| **Purple** | `#B78BEA` | AI integration | Claude Code, AI features |
+
+### Emoji Legend
+
+| Emoji | Purpose |
+|-------|---------|
+| 🤖 | AI integration |
+| 🧠 | Development OS |
+| 👥 | Agent layer |
+| 🛠️ | Skills & capabilities |
+| ✅ | Quality & evaluation |
+| 📚 | Documentation |
+| 🔔 | Alert system |
+| 🔒 | Security & privacy |
+| 💾 | Data storage |
+| 🎯 | Examples |
+| 📁 | Structure |
+| 🔗 | Links & references |
+
+---
+
+## 🏗️ Visual Components
+
+### 1. Badges
+
+**Purpose:** Quick status indicators in README headers
+
+**Format:**
+```markdown
+<img src="https://img.shields.io/badge/status-active-success" alt="Status: Active" />
+```
+
+**Badge Types:**
+- **Status:** `active`, `beta`, `experimental`
+- **Features:** `AI-ready`, `local-first`, `privacy-first`, `eval-driven`
+- **Tech:** `python-3.13+`, `Claude-Code-ready`
+- **License:** `MIT`, `Apache-2.0`
+
+**Usage:**
+```markdown
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-success" alt="Status" />
+  <img src="https://img.shields.io/badge/AI--ready-blue" alt="AI-ready" />
+  <img src="https://img.shields.io/badge/local--first-success" alt="Local-first" />
+</p>
+```
+
+### 2. SVG Diagrams
+
+**Purpose:** Colorful architecture diagrams with custom colors
+
+**Why SVG:**
+- GitHub renders SVG inline
+- Supports custom colors (not limited to code syntax highlighting)
+- Scalable without quality loss
+- Works in light/dark themes (dark backgrounds specified)
+
+**Template:**
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+      .label { font-family: 'JetBrains Mono', monospace; }
+      .title { font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="650" fill="#11181C"/>
+
+  <!-- Content -->
+  <text x="450" y="40" text-anchor="middle" fill="#D8DEE3" class="title" font-size="24">Title</text>
+</svg>
+```
+
+**Asset Location:** `/assets/*.svg`
+
+**Usage:**
+```markdown
+<p align="center">
+  <img src="./assets/speakops-architecture.svg" alt="Architecture diagram" width="900">
+</p>
+```
+
+### 3. Mermaid Diagrams
+
+**Purpose:** Flowcharts, sequence diagrams, system architecture
+
+**Why Mermaid:**
+- GitHub native support (no external rendering)
+- Text-based (version control friendly)
+- Theme-aware (adapts to light/dark)
+- Class-based styling
+
+**Styling Template:**
+```mermaid
+flowchart TD
+    A[Start] --> B[Process]
+
+    classDef default fill:#172126,stroke:#6F95A5,stroke-width:2px,color:#D8DEE3
+    class A,B default
+```
+
+**Class Styles:**
+```mermaid
+classDef source fill:#172126,stroke:#6F95A5,stroke-width:2px,color:#D8DEE3
+classDef extraction fill:#172126,stroke:#B7A27A,stroke-width:2px,color:#D8DEE3
+classDef voice fill:#172126,stroke:#8FAE9A,stroke-width:2px,color:#D8DEE3
+classDef quality fill:#172126,stroke:#B97868,stroke-width:2px,color:#D8DEE3
+classDef loop fill:#172126,stroke:#B78BEA,stroke-width:2px,color:#D8DEE3
+```
+
+### 4. Tables
+
+**Purpose:** Structured data, comparisons, references
+
+**Style:**
+```markdown
+| Feature | Status | Priority |
+|---------|--------|----------|
+| Extraction | ✅ Done | High |
+| Scoring | 🔄 In Progress | High |
+| Analytics | 📋 Planned | Medium |
+```
+
+### 5. Callouts
+
+**Purpose:** Important notes, warnings, tips
+
+**Style:**
+```markdown
+> **⚠️ Important:** This requires Claude Code to be installed.
+> **💡 Tip:** Use the `/ponytail` command for lazy development.
+> **🔒 Privacy:** All data stays local by default.
+```
+
+### 6. Code Blocks
+
+**Purpose:** Examples, commands, configurations
+
+**Style:**
+```markdown
+```bash
+# Commands with comments
+git clone https://github.com/vstakhovsky/speak-ops
+cd speakops
+```
+
+\```markdown
+<!-- Phrase card template -->
+# phrase-name
+
+**Russian:** перевод
+**Context:** usage context
+```
+```
+
+---
+
+## 📐 Layout Patterns
+
+### README Header Layout
+
+```markdown
+# Project Title
+
+<p align="center">
+  <strong>Tagline</strong>
+</p>
+
+<p align="center">
+  <img src="./assets/architecture.svg" alt="Architecture" width="900">
+</p>
+
+<p align="center">
+  <!-- Badges -->
+</p>
+
+---
+
+## Core Loop
+
+<p align="center">
+  <img src="./assets/core-loop.svg" alt="Core loop" width="800">
+</p>
+```
+
+### Documentation File Structure
+
+```markdown
+# Title
+
+> Description
+
+---
+
+## Section 1
+
+### Subsection
+Content
+
+---
+
+## Section 2
+Content
+
+---
+
+## Related
+- [Link 1](path/to/file.md)
+- [Link 2](path/to/file.md)
+```
+
+---
+
+## 🚫 GitHub Markdown Limitations
+
+### What Doesn't Work
+
+- ❌ Custom CSS in `<style>` tags (ignored by GitHub)
+- ❌ Arbitrary hex colors in text (must use badges or SVG)
+- ❌ Background colors on text (SVG required)
+- ❌ Custom fonts (SVG required, limited to web fonts)
+- ❌ Absolute positioning (relative positioning only)
+
+### What Works
+
+- ✅ SVG with embedded styles
+- ✅ Mermaid diagrams with classDef styling
+- ✅ Shields.io badges
+- ✅ Tables
+- ✅ Emoji
+- ✅ Standard Markdown (headers, lists, code blocks)
+
+---
+
+## 📝 Updating Assets
+
+### SVG Assets
+
+**Location:** `/assets/*.svg`
+
+**Naming Convention:**
+- `speakops-architecture.svg` — Repository structure
+- `speakops-core-loop.svg` — Core activation loop
+- `speakops-*.svg` — Feature-specific diagrams
+
+**Editing:**
+1. Use SVG editor (Illustrator, Inkscape, Figma)
+2. Or edit raw XML (text editor)
+3. Maintain color palette from this doc
+4. Test in GitHub preview
+
+**Previewing:**
+```bash
+# Local preview
+open assets/speakops-architecture.svg
+
+# Or use GitHub web preview after push
+```
+
+### Mermaid Diagrams
+
+**Location:** Embedded in `.md` files
+
+**Editing:**
+1. Edit Mermaid code directly in Markdown
+2. Use [Mermaid Live Editor](https://mermaid.live) for preview
+3. Copy back to Markdown when satisfied
+
+**Class Naming:**
+- Use semantic names: `source`, `extraction`, `voice`, `quality`, `loop`
+- Avoid generic: `class1`, `styleA`
+
+---
+
+## 🎯 Design Principles
+
+### 1. Readability First
+- High contrast in dark themes
+- Large enough text (min 11px in SVG, 14px in Markdown)
+- Clear hierarchy
+
+### 2. Theme Compatibility
+- Always specify dark backgrounds in SVG
+- Test in both GitHub light and dark themes
+- Avoid theme-specific assumptions
+
+### 3. Scannability
+- Use emoji for quick recognition
+- Clear section headers
+- Consistent spacing
+
+### 4. Maintainability
+- Document color choices
+- Reuse component patterns
+- Version control friendly
+
+---
+
+## 📚 Examples
+
+### Feature Section with Visuals
+
+```markdown
+## 🎯 Phrase Extraction
+
+<p align="center">
+  <img src="./assets/extraction-flow.svg" alt="Extraction flow" width="700">
+</p>
+
+**How it works:**
+
+1. **Source Ingestion** → Obsidian, Google Docs, YouTube
+2. **Phrase Detection** → Identify useful Business English phrases
+3. **Naturalness Gate** → Filter for spoken naturalness
+4. **Phrase Cards** → Generate structured phrase cards
+
+<details>
+<summary>See detailed workflow</summary>
+
+\```mermaid
+flowchart LR
+    Source[Source] --> Detect[Detect Phrases]
+    Detect --> Naturalness[Naturalness Gate]
+    Naturalness --> Cards[Phrase Cards]
+\```
+
+</details>
+```
+
+### Status Dashboard
+
+```markdown
+## 📊 Development Status
+
+| Component | Status | Progress | Notes |
+|-----------|--------|---------|-------|
+| Phrase Extraction | ✅ Done | 100% | v1.0 stable |
+| Voice Drills | ✅ Done | 100% | v1.0 stable |
+| Scoring | 🔄 In Progress | 80% | Beta testing |
+| Analytics | 📋 Planned | 0% | Backlog |
+```
+
+---
+
+## 🔗 Related Documentation
+
+- **Repository Structure:** [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md)
+- **Development Guide:** [CLAUDE.md](../CLAUDE.md)
+- **README Design:** [README_DESIGN_GUIDE.md](conventions/README_DESIGN_GUIDE.md)
+
+---
+
+**Design System Version:** 1.0  
+**Last Updated:** 2025-06-29
