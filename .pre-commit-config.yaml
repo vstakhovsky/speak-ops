@@ -1,0 +1,45 @@
+# Pre-commit hooks for SpeakOps
+# Lightweight quality checks before commit
+
+repos:
+  # Basic file checks
+  - repo: local
+    hooks:
+      - id: check-trailing-whitespace
+        name: Check trailing whitespace
+        entry: bash -c 'find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" -exec grep -l "[[:space:]]$" {} \; && echo "Found trailing whitespace" || echo "No trailing whitespace"'
+        language: system
+
+      - id: check-line-length
+        name: Check line length (soft limit 120)
+        entry: bash -c 'find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" -exec awk "length > 120 {print FILENAME\":\"NR\":\" \"$0}" {} \; | head -5 || echo "No lines > 120 chars"'
+        language: system
+
+  # Python checks
+  - repo: local
+    hooks:
+      - id: check-python-syntax
+        name: Check Python syntax
+        entry: bash -c 'for f in $(find ./scripts -name "*.py"); do python -m py_compile "$f" || exit 1; done && echo "Python syntax OK"'
+        language: system
+
+      - id: check-python-imports
+        name: Check Python imports (basic)
+        entry: bash -c 'grep -r "^import\|^from" --include="*.py" ./scripts || echo "No Python files with imports found"'
+        language: system
+
+  # Security checks
+  - repo: local
+    hooks:
+      - id: check-secrets
+        name: Check for obvious secrets
+        entry: bash -c 'if grep -r "API_KEY\|SECRET\|PASSWORD\|TOKEN" --include="*.py" --include="*.md" . | grep -v ".pre-commit-config.yaml" | grep -v "SECURITY.md"; then echo "Found potential secrets"; exit 1; else echo "No secrets found"; fi'
+        language: system
+
+      - id: check-env-files
+        name: Check for .env files
+        entry: bash -c 'if find . -name ".env*" -not -path "./.git/*" | head -1; then echo "Found .env files"; exit 1; else echo "No .env files"; fi'
+        language: system
+
+# Minimal configuration - can be extended with actual tools if needed
+# For now, using basic bash commands to avoid heavy dependencies

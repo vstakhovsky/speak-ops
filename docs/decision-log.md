@@ -280,6 +280,60 @@ Each decision includes:
 
 ---
 
+## 2025-06-28: AI-Ready Repository Upgrade
+
+**Decision:** Upgrade SpeakOps repository to AI-ready standard with Claude Code commands, convention docs, PROJECT_STRUCTURE.md, and lightweight guardrails.
+
+**Rationale:**
+- Inspired by "Claude-ready dbt project" structure
+- Improves Claude Code usability with commands layer
+- Provides clear documentation for conventions
+- Adds quality gates with GitHub workflows
+- Creates polished, professional GitHub presence
+- Maintains local-first and privacy-first principles
+
+**Components added:**
+- `.claude/commands/` — 7 command files for Claude Code workflows
+- `.claude/skills/README.md` — Claude-facing skills bridge
+- `PROJECT_STRUCTURE.md` — Repository anatomy documentation
+- 7 convention docs — SPEAKING_STYLE_GUIDE.md, PHRASE_EXTRACTION_CONVENTIONS.md, VOICE_DRILL_CONVENTIONS.md, EVAL_CONVENTIONS.md, PRIVACY_CONVENTIONS.md, AGENT_WORKFLOW_CONVENTIONS.md, README_DESIGN_GUIDE.md
+- GitHub workflows — markdown-check.yml, python-check.yml, secret-scan.yml
+- `.pre-commit-config.yaml` — Pre-commit hooks
+- `docs/GITHUB_PROFILE_SETUP.md` — Repository setup guide
+- 4 example files — source-sample.md, phrase-cards-sample.md, voice-drill-sample.md, scoring-report-sample.md
+
+**Trade-offs:**
+- More documentation overhead
+- GitHub workflows require maintenance
+- Pre-commit adds friction to commits
+- Additional files to maintain
+- Complexity vs simplicity balance
+
+**Consequences:**
+- Easier onboarding for contributors
+- Better Claude Code integration
+- Clearer quality expectations
+- More professional GitHub presence
+- Consistent conventions across development
+- Automated quality checks
+
+**Alternatives considered:**
+- Minimal documentation only — Rejected due to unclear onboarding
+- No GitHub workflows — Rejected due to manual process burden
+- No pre-commit hooks — Rejected due to quality risk
+- Single comprehensive doc — Rejected due to maintainability
+
+**Follow-up actions:**
+- [ ] Create initial v0.1.0 release
+- [ ] Test GitHub workflows on PR
+- [ ] Review and refine convention docs based on usage
+- [ ] Add more example workflows
+- [ ] Consider adding ISSUE_TEMPLATE.md
+
+**Status:** ✓ Implemented
+
+---
+
 ## Future Decisions
 
 These decisions will be made as needed:
@@ -293,5 +347,5 @@ These decisions will be made as needed:
 
 ---
 
-**Log Version:** 1.0
+**Log Version:** 1.1
 **Last Updated:** 2025-06-28

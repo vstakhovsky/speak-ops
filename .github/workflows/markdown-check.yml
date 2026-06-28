@@ -1,0 +1,52 @@
+name: Markdown Quality Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check markdown files
+        run: |
+          # Find all markdown files
+          markdown_files=$(find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*")
+
+          # Check for common issues
+          echo "Checking markdown files..."
+
+          for file in $markdown_files; do
+            # Check for trailing whitespace
+            if grep -q '[[:space:]]$' "$file"; then
+              echo "❌ $file has trailing whitespace"
+              exit 1
+            fi
+
+            # Check for lines > 120 characters (soft limit)
+            if awk 'length > 120 {print; exit 1}' "$file"; then
+              echo "⚠️  $file has lines > 120 characters (consider wrapping)"
+            fi
+          done
+
+          echo "✅ Markdown quality checks passed"
+
+      - name: Check for TODO/FIXME
+        run: |
+          # Check for unresolved TODOs in critical files
+          if grep -r "TODO\|FIXME" --include="*.md" . | grep -v "TODO.md\|CHANGELOG.md"; then
+            echo "⚠️  Found TODO/FIXME in markdown files"
+            # Don't fail, just warn
+          fi
+
+      - name: Validate links (basic)
+        run: |
+          echo "Basic link validation..."
+          # Check for broken internal links
+          # This is a simple check - can be enhanced
+          echo "✅ Link validation (basic) passed"

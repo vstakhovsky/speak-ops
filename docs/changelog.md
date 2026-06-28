@@ -8,17 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial SpeakOps repository structure
-- Agentic development OS protocols
-- 10 Claude Code skills
-- Agent role definitions
-- Eval rubrics and frameworks
-- Security and privacy model
-- Workflow documentation
-- Voice hooks specification
-- Template library
-- Python scripts for ingestion and scoring
-- Local-first architecture
+- **Claude Code integration layer** — `.claude/` directory with commands and skills bridge
+- **7 Claude Code commands** — ingest-source, extract-phrases, build-voice-drill, score-session, weekly-eval, review-skill, improve-repo
+- **PROJECT_STRUCTURE.md** — Repository anatomy and documentation
+- **7 convention docs** — SPEAKING_STYLE_GUIDE, PHRASE_EXTRACTION_CONVENTIONS, VOICE_DRILL_CONVENTIONS, EVAL_CONVENTIONS, PRIVACY_CONVENTIONS, AGENT_WORKFLOW_CONVENTIONS, README_DESIGN_GUIDE
+- **GitHub quality workflows** — markdown-check, python-check, secret-scan, eval-regression
+- **Pre-commit hooks** — .pre-commit-config.yaml for quality checks
+- **GitHub profile setup guide** — docs/GITHUB_PROFILE_SETUP.md
+- **4 example files** — source-sample, phrase-cards-sample, voice-drill-sample, scoring-report-sample
+
+### Changed
+- **Improved README.md** — Enhanced with badges, clearer structure, better GitHub presentation
+- **Updated decision-log.md** — Added AI-ready repository upgrade decision
+
+### Security
+- **Secret scanning** — GitHub workflow for detecting secrets
+- **Pre-commit checks** — Local validation before commits
+- **Markdown quality checks** — Ensure consistent documentation
 
 ## [0.1.0] - 2025-06-28
 
@@ -56,5 +62,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-**Changelog Version:** 1.0
+**Changelog Version:** 1.1
 **Last Updated:** 2025-06-28
