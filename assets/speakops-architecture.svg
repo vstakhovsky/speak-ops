@@ -26,7 +26,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#6F95A5" stroke-width="2"/>
     <text x="20" y="35" fill="#6F95A5" class="title" font-size="18">.claude/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Claude Code integration</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">commands/ skills/</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">commands/ skills/</text>
   </g>
 
   <!-- .agent/ -->
@@ -34,7 +34,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B78BEA" stroke-width="2"/>
     <text x="20" y="35" fill="#B78BEA" class="title" font-size="18">.agent/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Agentic Development OS</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">memory/ protocols/ adapters/</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">memory/ protocols/ adapters/</text>
   </g>
 
   <!-- skills/ -->
@@ -42,7 +42,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
     <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">skills/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">10 Claude Code Skills</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">phrase-extractor voice-drill-builder</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">phrase-extractor voice-drill-builder</text>
   </g>
 
   <!-- Row 2 -->
@@ -52,7 +52,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B7A27A" stroke-width="2"/>
     <text x="20" y="35" fill="#B7A27A" class="title" font-size="18">agents/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">11 Specialist Agents</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">spec-planner lazy-senior-dev eval-engineer</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">spec-planner lazy-senior-dev eval-engineer</text>
   </g>
 
   <!-- evals/ -->
@@ -60,7 +60,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B97868" stroke-width="2"/>
     <text x="20" y="35" fill="#B97868" class="title" font-size="18">evals/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Quality &amp; Regression</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">rubrics/ datasets/ reports/</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">rubrics/ datasets/ reports/</text>
   </g>
 
   <!-- docs/ -->
@@ -68,7 +68,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
     <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">docs/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Workflows &amp; Conventions</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">workflows/ conventions/ adr/</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">workflows/ conventions/ adr/</text>
   </g>
 
   <!-- Row 3 -->
@@ -78,7 +78,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#6F95A5" stroke-width="2"/>
     <text x="20" y="35" fill="#6F95A5" class="title" font-size="18">examples/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Safe Demo Examples</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">source-sample voice-drill-sample</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">source-sample voice-drill-sample</text>
   </g>
 
   <!-- scripts/ -->
@@ -86,7 +86,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#8FAE9A" stroke-width="2"/>
     <text x="20" y="35" fill="#8FAE9A" class="title" font-size="18">scripts/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Local Automation</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">ingest_obsidian score_session</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">ingest_obsidian score_session</text>
   </g>
 
   <!-- voice-hooks/ -->
@@ -94,7 +94,7 @@
     <rect width="280" height="100" rx="8" fill="#1F2937" stroke="#B7A27A" stroke-width="2"/>
     <text x="20" y="35" fill="#B7A27A" class="title" font-size="18">voice-hooks/</text>
     <text x="20" y="60" fill="#8A969E" class="label" font-size="14">Voice Alert System</text>
-    <text x="20" y="80" fill="#8A969E" class="label" font-size="13">triggers for daily practice</text>
+    <text x="20" y="80" fill="#8A969E" class="label" font-size="14">triggers for daily practice</text>
   </g>
 
   <!-- Core Docs Row -->
@@ -110,30 +110,30 @@
 
     <g transform="translate(0, 15)">
       <rect width="20" height="20" rx="4" fill="#6F95A5"/>
-      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Integration</text>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="14">Integration</text>
     </g>
 
     <g transform="translate(150, 15)">
       <rect width="20" height="20" rx="4" fill="#B78BEA"/>
-      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Development OS</text>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="14">Development OS</text>
     </g>
 
     <g transform="translate(320, 15)">
       <rect width="20" height="20" rx="4" fill="#8FAE9A"/>
-      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Skills &amp; Docs</text>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="14">Skills &amp; Docs</text>
     </g>
 
     <g transform="translate(480, 15)">
       <rect width="20" height="20" rx="4" fill="#B7A27A"/>
-      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Agents &amp; Hooks</text>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="14">Agents &amp; Hooks</text>
     </g>
 
     <g transform="translate(640, 15)">
       <rect width="20" height="20" rx="4" fill="#B97868"/>
-      <text x="30" y="15" fill="#8A969E" class="label" font-size="13">Quality &amp; Evals</text>
+      <text x="30" y="15" fill="#8A969E" class="label" font-size="14">Quality &amp; Evals</text>
     </g>
   </g>
 
   <!-- Footer Info -->
-  <text x="600" y="745" text-anchor="middle" fill="#6F95A5" class="label" font-size="13">github.com/vstakhovsky/speak-ops • Local-first • Privacy-first • Eval-driven</text>
+  <text x="600" y="745" text-anchor="middle" fill="#6F95A5" class="label" font-size="14">github.com/vstakhovsky/speak-ops • Local-first • Privacy-first • Eval-driven</text>
 </svg>

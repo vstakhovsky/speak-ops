@@ -312,3 +312,123 @@ source-ingestor → privacy-security-reviewer → phrase-extractor
 
 **Version:** 1.0
 **Last updated:** 2025-06-28
+
+---
+
+## No Self-Approval Rule
+
+**CRITICAL:** Agents must never approve their own work.
+
+A task is **NOT READY** until:
+
+1. **Implementation is complete**
+   - Changes made as planned
+   - Files modified correctly
+   - No unintended changes
+
+2. **Validators are run**
+   - markdown-render-validator: PASS
+   - svg-layout-validator: PASS
+   - github-readme-auditor: PASS
+   - ci-gate-reviewer: PASS
+   - codex-cross-review: PASS
+
+3. **Codex-style cross-review is performed**
+   - Independent review of changes
+   - Skeptical challenge of claims
+   - Search for bugs, rendering issues, security problems
+   - Evidence required for success claims
+
+4. **release-readiness-gate returns READY**
+   - All 5 validators pass
+   - Evidence documented
+   - No blocking issues
+   - No suspicious claims
+
+### If Validation Is Not Performed
+
+Final status must be:
+
+```
+NOT READY — validation not performed
+```
+
+### Claude Code Operating Mode
+
+Claude Code is the **implementer**, not the final judge.
+
+Claude must:
+- Create visual plan for non-trivial changes
+- Implement small, reviewable patches
+- Run validators after implementation
+- Request or simulate Codex-style cross-review
+- Fix blocking issues
+- Only report READY after release-readiness-gate passes
+
+Claude must **not**:
+- Claim success based only on file creation
+- Say "looks good" without validation
+- Ignore broken GitHub rendering
+- Disable CI to make checks green
+- Hide uncertainty or skip validation
+
+### Codex Reviewer Mode
+
+Codex acts as **skeptical reviewer**.
+
+Codex must:
+- Inspect the diff
+- Challenge Claude's claims
+- Search for rendering, CI, security, architecture, and documentation issues
+- Mark blocking problems as hard fails
+- Require evidence before accepting READY
+
+Codex should assume:
+- Visual regressions are likely
+- Markdown can silently break
+- SVG can render differently on GitHub
+- CI may fail even if local files look fine
+- Agent claims may be overconfident
+
+### Required Sequence
+
+For any meaningful change:
+
+1. **Visual Plan** (for non-trivial changes)
+   - See: `.claude/commands/visual-plan.md`
+   - Protocol: `.agent/protocols/visual-plan-first.md`
+
+2. **Claude Implementation**
+   - Small, reviewable changes
+   - Document what was done
+
+3. **Validation Run**
+   - markdown-render-validator
+   - svg-layout-validator
+   - github-readme-auditor
+   - ci-gate-reviewer
+
+4. **Codex Cross-Review**
+   - Skeptical review of diff
+   - Challenge claims
+   - Require evidence
+
+5. **Release Readiness Gate**
+   - See: `skills/release-readiness-gate/SKILL.md`
+   - Protocol: `.agent/protocols/staged-validation.md`
+
+6. **Final Status**
+   - READY (only if all pass)
+   - NOT READY (if any fail)
+
+### See Also
+
+- **Claude-Codex Dual Review:** `.agent/protocols/claude-codex-dual-review.md`
+- **Staged Validation:** `.agent/protocols/staged-validation.md`
+- **Visual Plan First:** `.agent/protocols/visual-plan-first.md`
+
+---
+
+**Version:** 1.1
+**Last updated:** 2025-06-29
+**Added:** No Self-Approval Rule

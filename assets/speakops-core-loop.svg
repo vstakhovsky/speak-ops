@@ -79,9 +79,9 @@
 
     <!-- Repetition -->
     <text x="340" y="190" text-anchor="middle" fill="#B7A27A" class="title" font-size="15">Repetition</text>
-    <text x="340" y="210" text-anchor="middle" fill="#8A969E" class="label" font-size="13">Weak phrases replayed</text>
+    <text x="340" y="210" text-anchor="middle" fill="#8A969E" class="label" font-size="14">Weak phrases replayed</text>
   </g>
 
   <!-- Bottom Info -->
-  <text x="550" y="290" text-anchor="middle" fill="#6F95A5" class="label" font-size="12">ChatGPT Voice Mode • Local Scoring • Progress Tracking</text>
+  <text x="550" y="290" text-anchor="middle" fill="#6F95A5" class="label" font-size="14">ChatGPT Voice Mode • Local Scoring • Progress Tracking</text>
 </svg>

@@ -153,3 +153,88 @@ For a new feature:
 
 **Version:** 1.0
 **Last updated:** 2025-06-28
+
+---
+
+## Claude Code Operating Mode
+
+Claude Code is the **implementer**, not the final judge.
+
+### Claude Must
+
+- Create visual plan for non-trivial changes
+- Implement small, reviewable patches
+- Run validators after implementation
+- Request or simulate Codex-style cross-review
+- Fix blocking issues
+- Only report READY after release-readiness-gate passes
+
+### Claude Must Not
+
+- Claim success based only on file creation
+- Say "looks good" without validation
+- Ignore broken GitHub rendering
+- Disable CI to make checks green
+- Hide uncertainty or skip validation
+
+## Commands
+
+### Validation Commands
+
+```bash
+/visual-plan              # Create visual plan before implementation
+/codex-review            # Run skeptical cross-review
+/strict-release-check    # Run final validation gate
+/fix-readme-rendering    # Fix README rendering issues
+/fix-svg-layout          # Fix SVG layout issues
+```
+
+### Core Commands
+
+```bash
+/ingest-obsidian --path "<vault-path>"
+/ingest-gdoc --url "<google-doc-url>"
+/ingest-youtube --url "<youtube-url>" --via notebooklm
+/extract-phrases --domain ai-evals --level b2-c1
+/filter-spoken --remove-ai-like
+/build-voice-drill --mode interview --session 8
+/build-voice-drill --mode meeting --scenario stakeholder-pushback
+/score-session --transcript "<file>"
+/replay-weak --count 5
+/weekly-eval
+```
+
+## Validation System
+
+### Required Validators
+
+For any meaningful change, must run:
+
+1. **markdown-render-validator** - Check README/docs rendering
+2. **svg-layout-validator** - Check diagram readability
+3. **github-readme-auditor** - Check landing page quality
+4. **ci-gate-reviewer** - Check CI effectiveness
+5. **codex-cross-review** - Skeptical review of changes
+6. **release-readiness-gate** - Final READY/NOT READY decision
+
+### No Self-Approval
+
+A task is **NOT READY** until all validators pass.
+
+If validation is not performed, status must be:
+
+```
+NOT READY — validation not performed
+```
+
+### See Also
+
+- **No Self-Approval Rule:** AGENTS.md
+- **Claude-Codex Dual Review:** `.agent/protocols/claude-codex-dual-review.md`
+- **Staged Validation:** `.agent/protocols/staged-validation.md`
+
+---
+
+**Version:** 1.1
+**Last updated:** 2025-06-29
+**Added:** Claude Code Operating Mode and Validation System

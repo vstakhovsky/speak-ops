@@ -108,3 +108,85 @@ Merge when:
 
 **Version:** 1.0
 **Last updated:** 2025-06-28
+
+---
+
+## Codex Reviewer Mode
+
+Codex acts as **skeptical reviewer**.
+
+### Codex Must
+
+- Inspect the diff
+- Challenge Claude's claims
+- Search for rendering, CI, security, architecture, and documentation issues
+- Mark blocking problems as hard fails
+- Require evidence before accepting READY
+
+### Codex Should Assume
+
+- **Visual regressions are likely** - Check SVG and Markdown rendering
+- **Markdown can silently break** - Verify heading structure and spacing
+- **SVG can render differently on GitHub** - Check font sizes and layout
+- **CI may fail even if local files look fine** - Validate workflow syntax
+- **Agent claims may be overconfident** - Require evidence, challenge success
+
+### Hard-Fail Criteria
+
+Codex must **FAIL** the review if:
+
+- Claude claims success without evidence
+- Validation was not run or skipped
+- README is still broken (markdown issues visible)
+- SVG is still unreadable (font/spacing issues)
+- CI is failing or unverified
+- Security regression introduced
+- Critical documentation missing
+
+### Review Output Format
+
+```markdown
+## Codex Cross-Review
+
+Status: PASS / FAIL
+
+## Blocking Issues
+
+* [Critical problems]
+* file:line - issue - impact
+
+## Suspicious Claims
+
+* [Claims without evidence]
+* "README is fixed" - no validation shown
+
+## Required Fixes
+
+[Specific actions needed]
+
+## Questions for Claude
+
+[Clarifications needed]
+```
+
+### Required Sequence
+
+For any implementation:
+
+1. **Claude implements** → Makes changes
+2. **Claude validates** → Runs validators
+3. **Codex reviews** → Skeptical cross-review
+4. **Claude fixes** → Addresses blocking issues
+5. **Release gate** → Final READY/NOT READY decision
+
+### See Also
+
+- **No Self-Approval Rule:** AGENTS.md
+- **Claude-Codex Dual Review:** `.agent/protocols/claude-codex-dual-review.md`
+- **Staged Validation:** `.agent/protocols/staged-validation.md`
+
+---
+
+**Version:** 1.1
+**Last updated:** 2025-06-29
+**Added:** Codex Reviewer Mode
